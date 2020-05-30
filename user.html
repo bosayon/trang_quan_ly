@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COURSERA - Administrator</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--Icons-->
+<script src="js/lumino.glyphs.js"></script>
+
+</head>
+
+<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">						
+						<a class="navbar-brand" href="index.php">COURSERA</a>
+						<ul class="user-menu">
+							<li class="dropdown pull-right">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> <?php if(isset($_SESSION['mail'])){echo $_SESSION['mail'];}?> <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Hồ sơ</a></li>
+									<li><a href="logout.php"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Đăng xuất</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+									
+				</div><!-- /.container-fluid -->
+			</nav>
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<form role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+		</form>
+		<ul class="nav menu">
+			<li class="active"><a href="#"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li><a href="user.html"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>Quản lý user</a></li>
+			<li><a href="course.html"><svg class="glyph stroked video"><use xlink:href="#stroked-video"/></svg>Quản lý course</a></li>
+			<li><a href="category.html"><svg class="glyph stroked open folder"><use xlink:href="#stroked-open-folder"/></svg>Quản lý category</a></li>
+		</ul>
+
+    </div><!--/.sidebar-->
+
+     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+                <li class="active">Danh sách user</li>
+            </ol>
+        </div><!--/.row-->
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Danh sách user</h1>
+            </div>
+        </div><!--/.row-->
+        <div id="toolbar" class="btn-group">
+            <a href="adduser.html" class="btn btn-success">
+                <i class="glyphicon glyphicon-plus"></i> Thêm user
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table 
+                            data-toolbar="#toolbar"
+                            data-toggle="table">
+    
+                            <thead>
+                            <tr>
+                                <th data-field="id" data-sortable="true">ID</th>
+                                <th data-field="name"  data-sortable="true">Họ & Tên</th>
+                                <th data-field="price" data-sortable="true">Email</th>
+                                <th>Quyền</th>
+                                <th>Hành động</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td >1</td>
+                                    <td >Nguyễn Văn Đức</td>
+                                    <td >nguyenvanduc@gmail.com</td>
+                                    <td>Admin</td>
+                                    <td class="form-group">
+                                        <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
+                                        <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >2</td>
+                                    <td >Lê Ngọc Đông</td>
+                                    <td >lengocdong@gmail.com</td>
+                                    <td>User</td>
+                                    <td class="form-group">
+                                        <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
+                                        <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.row-->	
+    </div>	<!--/.main-->
+		
+</body>
+
+</html>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-table.js"></script>
